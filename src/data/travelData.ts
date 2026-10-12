@@ -1,14 +1,21 @@
 import { ServiceItem, FleetItem } from '../types';
 import { Language } from '../i18n/translations';
+import blueTouristerImage from '../assets/images/blue_tourister_bus_1791698150659.jpg';
+import greenMahindraImage from '../assets/images/green_mahindra_vehicle_1791698162847.jpg';
+import heroTravelBusImage from '../assets/images/hero_travel_bus_1791694538521.jpg';
+import omniVanImage from '../assets/images/omni_passenger_van_1791698139750.jpg';
+import schoolBusServiceImage from '../assets/images/school_bus_service_1791694550958.jpg';
+import taveraImage from '../assets/images/tavera_passenger_suv_1791698173407.jpg';
+import touristTravelServiceImage from '../assets/images/tourist_travel_service_1791694565229.jpg';
 
-export const HERO_IMAGE = '/src/assets/images/hero_travel_bus_1791694538521.jpg';
+export const HERO_IMAGE = heroTravelBusImage;
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'bhavans-school-transport',
     name: 'Bhavans School Transportation',
     slug: 'bhavans-school-transportation',
-    image: '/src/assets/images/school_bus_service_1791694550958.jpg',
+    image: schoolBusServiceImage,
     shortDescription: 'Dedicated daily pick-up and drop-off transportation exclusively for students of Bhavans School.',
     fullDescription: 'SV Travels provides structured, punctual daily commuting routes arranged exclusively for students attending Bhavans School. Our drivers follow verified schedules to ensure student safety, punctual arrival, and orderly return every school day.',
     suitableUseCases: [
@@ -28,7 +35,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'school-trips-tours',
     name: 'School Trips and Educational Tours',
     slug: 'school-trips-and-educational-tours',
-    image: '/src/assets/images/tourist_travel_service_1791694565229.jpg',
+    image: touristTravelServiceImage,
     shortDescription: 'Safe group transportation for educational field trips, science exhibitions, museum visits, and student excursions.',
     fullDescription: 'Coordinated transportation logistics for educational tours, historical heritage excursions, science centre visits, and inter-school academic competitions. Open to educational batches and student groups seeking reliable travel.',
     suitableUseCases: [
@@ -47,7 +54,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'tourist-travel',
     name: 'Tourist Travel',
     slug: 'tourist-travel',
-    image: '/src/assets/images/hero_travel_bus_1791694538521.jpg',
+    image: heroTravelBusImage,
     shortDescription: 'Comfortable passenger vehicles for sightseeing itineraries, family vacations, pilgrimage tours, and group travel.',
     fullDescription: 'Explore regional tourist spots, pilgrimage temples, coastal destinations, and hill stations with clean, dependable passenger vehicles. SV Travels caters to family groups and travel parties looking for comfortable seating and courteous drivers.',
     suitableUseCases: [
@@ -67,7 +74,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'local-outstation',
     name: 'Local and Outstation Travel',
     slug: 'local-and-outstation-travel',
-    image: '/src/assets/images/tavera_passenger_suv_1791698173407.jpg',
+    image: taveraImage,
     shortDescription: 'Point-to-point transfers for airport pickups, family functions, social events, and intercity journeys.',
     fullDescription: 'From punctual airport pick-and-drops across Chennai to attending wedding celebrations or traveling to outstation districts, SV Travels offers point-to-point and round-trip travel hires keeping your group together comfortably.',
     suitableUseCases: [
@@ -93,7 +100,7 @@ export const FLEET_DATA: FleetItem[] = [
     seatingCapacity: null,
     capacityConfirmed: false,
     capacityLabel: 'Seating capacity to be confirmed',
-    image: '/src/assets/images/omni_passenger_van_1791698139750.jpg',
+    image: omniVanImage,
     shortDescription: 'Compact passenger van suitable for small group transfers, local errands, and quick point-to-point journeys.',
     features: [
       'Compact Micro-Van Maneuverability',
@@ -110,7 +117,7 @@ export const FLEET_DATA: FleetItem[] = [
     seatingCapacity: 22,
     capacityConfirmed: true,
     capacityLabel: '22-seater',
-    image: '/src/assets/images/blue_tourister_bus_1791698150659.jpg',
+    image: blueTouristerImage,
     shortDescription: 'Distinctive royal blue 22-seater mini bus with dedicated passenger seating and comfortable highway ride.',
     features: [
       'Confirmed 22 Passenger High-Back Seats',
@@ -127,7 +134,7 @@ export const FLEET_DATA: FleetItem[] = [
     seatingCapacity: 25,
     capacityConfirmed: true,
     capacityLabel: '25-seater',
-    image: '/src/assets/images/green_mahindra_vehicle_1791698162847.jpg',
+    image: greenMahindraImage,
     shortDescription: 'Sturdy green 25-seater Mahindra passenger vehicle designed for larger groups, school batches, and excursion travel.',
     features: [
       'Confirmed 25 Passenger Seating Capacity',
@@ -144,7 +151,7 @@ export const FLEET_DATA: FleetItem[] = [
     seatingCapacity: 8,
     capacityConfirmed: true,
     capacityLabel: '8-seater',
-    image: '/src/assets/images/tavera_passenger_suv_1791698173407.jpg',
+    image: taveraImage,
     shortDescription: 'Reliable 8-seater multi-utility passenger vehicle ideal for families, airport runs, and smaller travel parties.',
     features: [
       'Confirmed 8 Passenger Seats',

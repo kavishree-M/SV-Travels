@@ -25,7 +25,10 @@ export const apiService = {
     try {
       const response = await apiClient.get<ServiceItem[]>('/services');
       if (response.data && Array.isArray(response.data) && response.data.length > 0) {
-        return response.data;
+        return response.data.map((service) => ({
+          ...service,
+          image: SERVICES_DATA.find((localService) => localService.id === service.id)?.image ?? service.image,
+        }));
       }
     } catch {
       // Fallback to local structured services if backend isn't mounted yet
@@ -38,7 +41,10 @@ export const apiService = {
     try {
       const response = await apiClient.get<FleetItem[]>('/fleet');
       if (response.data && Array.isArray(response.data) && response.data.length > 0) {
-        return response.data;
+        return response.data.map((vehicle) => ({
+          ...vehicle,
+          image: FLEET_DATA.find((localVehicle) => localVehicle.id === vehicle.id)?.image ?? vehicle.image,
+        }));
       }
     } catch {
       // Fallback to local structured fleet
