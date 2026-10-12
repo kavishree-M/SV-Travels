@@ -22,7 +22,7 @@ public class CorsConfig {
                 String[] origins = Arrays.stream(allowedOrigins.split(","))
                         .map(String::trim)
                         .filter(origin -> !origin.isEmpty())
-                        .map(origin -> origin.contains("://") ? origin : "https://" + origin)
+                        .map(CorsConfig::normalizeOrigin)
                         .toArray(String[]::new);
                 registry.addMapping("/api/**")
                         .allowedOriginPatterns(origins)
@@ -32,5 +32,17 @@ public class CorsConfig {
                         .maxAge(3600);
             }
         };
+    }
+
+    private static String normalizeOrigin(String origin) {
+        if (origin.contains("://")) {
+            return origin;
+        }
+
+        if (!origin.contains(".") && !origin.contains(":")) {
+            return "https://" + origin + ".onrender.com";
+        }
+
+        return "https://" + origin;
     }
 }
