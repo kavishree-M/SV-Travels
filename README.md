@@ -15,7 +15,7 @@ Configure these variables in the backend environment:
 | Variable | Purpose |
 |---|---|
 | `MAIL_HOST` | SMTP server; defaults to `smtp.gmail.com` |
-| `MAIL_PORT` | SMTP port; defaults to `587` |
+| `MAIL_PORT` | SMTP SSL port; defaults to `465` |
 | `MAIL_USERNAME` | Gmail account used to send the notification |
 | `MAIL_PASSWORD` | Google App Password; do not use your normal account password |
 | `SV_TRAVELS_EMAIL` | Inbox that receives booking enquiries; defaults to `MAIL_USERNAME` |
@@ -24,7 +24,7 @@ Keep SMTP credentials on the backend only. Do not place them in frontend environ
 
 ### Render email setup
 
-The Render Blueprint deliberately leaves `MAIL_PASSWORD` unset because it is a secret. In the `sv-travels-backend` service's **Environment** settings, add `MAIL_PASSWORD` with a Google App Password for the account in `MAIL_USERNAME` (not the account's regular password), save the change, and redeploy. Keep `MAIL_USERNAME` and `SV_TRAVELS_EMAIL` set to the Gmail sender account and the inbox that should receive enquiries. After redeployment, submit a test enquiry and check that inbox's spam folder if the message is not in the inbox. The API reports an error rather than confirming a booking when email delivery fails.
+The backend connects to Gmail using implicit SSL on port `465`. The Render Blueprint deliberately leaves `MAIL_PASSWORD` unset because it is a secret. In the `sv-travels-backend` service's **Environment** settings, add `MAIL_PASSWORD` with a Google App Password for the account in `MAIL_USERNAME` (not the account's regular password), save the change, and redeploy. Keep `MAIL_USERNAME` and `SV_TRAVELS_EMAIL` set to the Gmail sender account and the inbox that should receive enquiries. After redeployment, submit a test enquiry and check that inbox's spam folder if the message is not in the inbox. The API reports an error rather than confirming a booking when email delivery fails.
 
 ## Booking API
 

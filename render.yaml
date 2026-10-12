@@ -31,7 +31,7 @@ services:
       - key: MAIL_HOST
         value: smtp.gmail.com
       - key: MAIL_PORT
-        value: 587
+        value: 465
       - key: MAIL_USERNAME
         value: svtravelschennai51@gmail.com
       - key: MAIL_PASSWORD
