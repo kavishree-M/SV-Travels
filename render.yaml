@@ -35,11 +35,11 @@ services:
       - key: MAIL_PORT
         value: 587
       - key: MAIL_USERNAME
-        value: svltravelschennai51@gmail.com
+        value: svtravelschennai51@gmail.com
       - key: MAIL_PASSWORD
         sync: false # Set securely in Render dashboard
       - key: SV_TRAVELS_EMAIL
-        value: svltravelschennai51@gmail.com
+        value: svtravelschennai51@gmail.com
       - key: FRONTEND_URL
         fromService:
           name: sv-travels-frontend
