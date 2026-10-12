@@ -77,4 +77,4 @@ No database or MySQL service is required.
 
 ## Render deployment
 
-The `render.yaml` Blueprint creates a frontend static site and an email-only backend web service; it does not provision a database. Set `MAIL_PASSWORD` in the backend service's secret environment variables before expecting booking email delivery. `MAIL_USERNAME` and the receiving inbox are preconfigured to the SV Travels Gmail address.
+The `render.yaml` Blueprint creates a frontend static site and an email-only backend web service; it does not provision a database. Both services use Render's free plan, so the backend may spin down while idle and its first request after inactivity can take longer while it starts. The frontend waits for that startup before timing out. Set `MAIL_PASSWORD` in the backend service's secret environment variables before expecting booking email delivery. `MAIL_USERNAME` and the receiving inbox are preconfigured to the SV Travels Gmail address.

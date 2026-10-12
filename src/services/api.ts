@@ -2,14 +2,21 @@ import axios from 'axios';
 import { BookingFormData, BookingRecord, ServiceItem, FleetItem } from '../types';
 import { SERVICES_DATA, FLEET_DATA } from '../data/travelData';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = !configuredApiBaseUrl
+  ? '/api'
+  : configuredApiBaseUrl.startsWith('/')
+    ? configuredApiBaseUrl
+    : configuredApiBaseUrl.startsWith('http://') || configuredApiBaseUrl.startsWith('https://')
+      ? configuredApiBaseUrl
+      : `https://${configuredApiBaseUrl}/api`;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 6000,
+  timeout: 120_000,
 });
 
 export const apiService = {
