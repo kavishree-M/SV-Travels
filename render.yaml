@@ -1,0 +1,48 @@
+# ========================================================
+# Render Blueprint Specification for SV Travels
+# ========================================================
+services:
+  # 1. Frontend: React + Vite Static Site
+  - type: web
+    name: sv-travels-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          name: sv-travels-backend
+          type: web
+          property: host
+        value: https://${host}/api
+
+  # 2. Backend: Java Spring Boot Web Service
+  - type: web
+    name: sv-travels-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: standard
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: svltravelschennai51@gmail.com
+      - key: MAIL_PASSWORD
+        sync: false # Set securely in Render dashboard
+      - key: SV_TRAVELS_EMAIL
+        value: svltravelschennai51@gmail.com
+      - key: FRONTEND_URL
+        fromService:
+          name: sv-travels-frontend
+          type: web
+          property: host

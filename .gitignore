@@ -1,0 +1,10 @@
+node_modules/
+build/
+dist/
+coverage/
+oracleJdk-27/
+**/target/
+.DS_Store
+*.log
+.env*
+!.env.example

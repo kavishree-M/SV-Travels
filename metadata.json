@@ -1,0 +1,6 @@
+{
+  "name": "SV Travels",
+  "description": "SV Travels, Chennai — Transportation services including Bhavans School transportation, educational tours, tourist travel, and local/outstation fleet hire.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
