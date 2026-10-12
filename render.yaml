@@ -28,8 +28,6 @@ services:
     plan: free
     healthCheckPath: /actuator/health
     envVars:
-      - key: PORT
-        value: 8080
       - key: MAIL_HOST
         value: smtp.gmail.com
       - key: MAIL_PORT
