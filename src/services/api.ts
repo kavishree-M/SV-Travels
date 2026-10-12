@@ -9,7 +9,7 @@ const API_BASE_URL = !configuredApiBaseUrl
     ? configuredApiBaseUrl
     : configuredApiBaseUrl.startsWith('http://') || configuredApiBaseUrl.startsWith('https://')
       ? configuredApiBaseUrl
-      : `https://${configuredApiBaseUrl}/api`;
+      : `https://${configuredApiBaseUrl.includes('.') || configuredApiBaseUrl.includes(':') ? configuredApiBaseUrl : `${configuredApiBaseUrl}.onrender.com`}/api`;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
